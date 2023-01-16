@@ -1,0 +1,53 @@
+@use "_vars.scss";
+@use "_mixins.scss";
+
+body {
+    background-color: vars.$bg-color-body;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    background-color: vars.$bg-color-navbar;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar-text {
+    margin-left: 170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 46px;
+
+    .span-first {
+        @include mixins.Typography($color: vars.$color-text-white,
+            $font-size: 16px,
+            $line-height: 21px,
+            $letter-spacing: -0.13px);
+    }
+
+    .span-second {
+        @include mixins.Typography($color: vars.$color-text-white,
+            $font-size: 14px,
+            $line-height: 21px,
+            $letter-spacing: -0.12px);
+    }
+
+}
+
+.navbar-buttons {
+    margin-right: 217px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+
+h1 {
+    color: red;
+}
