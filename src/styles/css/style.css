@@ -1,0 +1,104 @@
+/*** Colors ***/
+/*** Border ***/
+/*** Fonts ***/
+:root {
+  font-family: "Inter", "sans serif";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F2F2;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  margin-right: 171px;
+  margin-left: 175px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filter-page-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.navbar {
+  background-color: #BB1E1E;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navbar-text {
+  margin-left: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
+}
+.navbar-text .span-first {
+  color: #FFFFFF;
+  font-family: "InterV_Bold";
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.13px;
+}
+.navbar-text .span-second {
+  color: #FFFFFF;
+  font-family: "InterV";
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.12px;
+}
+
+.navbar-buttons {
+  margin-right: 217px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.filter-button {
+  width: 63px;
+  height: 63px;
+  border-radius: 5px;
+  border: none;
+  color: #1D1D1B;
+  font-family: "InterV_Semi";
+  line-height: 14px;
+  letter-spacing: 0.1px;
+}
+
+.filter-button:hover {
+  background-color: #FFFFFF;
+  color: #BB1E1E;
+}
+
+.filter-list {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*** Forwards ***/
+
+/*# sourceMappingURL=style.css.map */

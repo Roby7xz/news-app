@@ -1,0 +1,28 @@
+@use "../utilities/variables" as var;
+
+
+:root {
+    font-family: var.$font-Inter, var.$font-sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var.$bg-color-body;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    margin-right: 171px;
+    margin-left: 175px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.filter-page-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}

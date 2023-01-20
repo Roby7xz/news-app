@@ -1,4 +1,4 @@
-/*** Color variables ***/
+/*** Colors ***/
 
 $bg-color-body: #F2F2F2;
 $bg-color-card: #FFFFFF;
@@ -8,13 +8,25 @@ $color-text-black: #000000;
 $color-text-gray: #1D1D1B;
 $color-text-white: #FFFFFF;
 $color-text-blue: #1E71BB;
+$color-text-red: #BB1E1E;
 
 $color-line-gray: #979797;
 $color-line-whitegray: #F4F5F8;
 
-/*** Border variables ***/
+/*** Border ***/
 
 $border-radius-5px: 5px;
 $border-radius-6px: 6px;
 $border-radius-8px: 8px;
 $border-radius-10px: 10px;
+
+/*** Fonts ***/
+
+$font-Inter: "Inter";
+$font-InterV: "InterV";
+$font-InterV_Semi: "InterV_Semi";
+$font-InterV_Medium: "InterV_Medium";
+$font-InterV_Bold: "InterV_Bold";
+$font-sans-serif: "sans serif";
+
+$font-size-10px: 10px;

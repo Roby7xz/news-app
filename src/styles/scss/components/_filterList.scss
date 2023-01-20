@@ -1,0 +1,9 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
+
+
+.filter-list {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}

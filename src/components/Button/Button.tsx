@@ -1,20 +1,29 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { ButtonType } from '../../utils/types';
 
-type buttonType = "submit" | "reset" | "button";
-
-interface IButtonProps {
-    type: buttonType,
+type ButtonProps = {
+    className?: string,
+    disabled?: boolean,
+    type: ButtonType,
     children: React.ReactNode,
-    route: string,
-    onClick?: () => void,
+    route?: string,
+    onClick?: () => void
 }
 
-const Button = (props: IButtonProps) => {
+const Button = (props: ButtonProps) => {
     return (
-        <Link to={props.route}>
-            <button type={props.type} onClick={props.onClick}>{props.children}</button>
+        <Link to={props.route!}>
+            <button
+                className={props.className}
+                disabled={props.disabled}
+                type={props.type}
+                onClick={props.onClick}
+            >
+                {props.children}
+            </button>
         </Link>
+
     )
 }
 

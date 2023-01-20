@@ -1,14 +1,8 @@
-@use "_vars.scss";
-@use "_mixins.scss";
-
-body {
-    background-color: vars.$bg-color-body;
-    margin: 0px;
-    padding: 0px;
-}
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
 
 .navbar {
-    background-color: vars.$bg-color-navbar;
+    background-color: var.$bg-color-navbar;
     height: 60px;
     display: flex;
     flex-direction: row;
@@ -24,14 +18,16 @@ body {
     gap: 46px;
 
     .span-first {
-        @include mixins.Typography($color: vars.$color-text-white,
+        @include mixins.Typography($font-family: var.$font-InterV_Bold,
+            $color: var.$color-text-white,
             $font-size: 16px,
             $line-height: 21px,
             $letter-spacing: -0.13px);
     }
 
     .span-second {
-        @include mixins.Typography($color: vars.$color-text-white,
+        @include mixins.Typography($font-family: var.$font-InterV,
+            $color: var.$color-text-white,
             $font-size: 14px,
             $line-height: 21px,
             $letter-spacing: -0.12px);
@@ -45,9 +41,4 @@ body {
     justify-content: center;
     align-items: center;
     gap: 24px;
-}
-
-
-h1 {
-    color: red;
 }
