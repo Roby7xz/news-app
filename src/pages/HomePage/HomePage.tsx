@@ -18,9 +18,14 @@ const HomePage = () => {
 
     return (
         <div>
-            <ArticleList defaultData={data} />
-            <Favourites />
-        </div>
+            <div style={{ display: "flex", flexDirection: "row", gap: "25px" }}>
+                <Favourites />
+            </div>
+            <br />
+            <div style={{ display: "flex", flexDirection: "row" }}>
+                <ArticleList defaultData={data} />
+            </div>
+        </div >
     )
 }
 

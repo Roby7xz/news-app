@@ -77,6 +77,10 @@ button {
   cursor: pointer;
 }
 
+.bookmark-button {
+  border: none;
+}
+
 .filter-button {
   width: 63px;
   height: 63px;
@@ -90,13 +94,27 @@ button {
 
 .filter-button:hover {
   background-color: #FFFFFF;
-  color: #BB1E1E;
+  /*color: var.$color-text-red;*/
 }
 
 .filter-list {
   width: 100px;
   display: flex;
   flex-direction: column;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 33%;
+  gap: 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 1px solid black;
 }
 
 /*** Forwards ***/

@@ -1,4 +1,5 @@
 export type ArticleData = {
+    bookmarked: boolean; // Added
     source: {
         id: string;
         name: string;
@@ -11,10 +12,6 @@ export type ArticleData = {
     publishedAt: string;
     content: string;
 };
-
-export type NewsResponse = [
-    ArticleData[]
-];
 
 export type AxiosConfig = {
     url: string;
@@ -29,10 +26,11 @@ export type AxiosConfig = {
     }
 };
 
-export type Debounce = {
-    value: string;
-    delayTime: number;
-}
+export type NewsResponse = [ArticleData[]];
+
+export type isBookmarked = boolean;
+
+export type BookmarksKey = string;
 
 export type Category = "Home" | "Business" | "General" | "Health" | "Science" | "Sports" | "Technology";
 

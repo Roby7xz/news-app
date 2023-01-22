@@ -27,10 +27,13 @@ const ArticleList = ({ defaultData, categoriesData, searchData }: Props) => {
     }, [defaultData, categoriesData, searchData])
 
     return (
-        <div>
+        <div className="article-list">
             {
                 dataTypes?.map((article: any, index: number) => {
-                    return <Article key={index} article={article} />
+                    return <Article
+                        key={article.publishedAt + index}
+                        article={article}
+                    />
                 })
             }
         </div>

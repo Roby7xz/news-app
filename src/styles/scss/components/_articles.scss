@@ -1,0 +1,17 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
+
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33%;
+    gap: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}

@@ -24,9 +24,9 @@ const CategoryPage = ({ searchData }: Props) => {
     useEffect(() => {
         if (categoryExists) {
             const fetchData = async () => {
-                if (categoryName === "Home") { // On route /Home , default category: General and re-routed on "/" route
+                if (categoryName === "Home") { // On route /Home default category is General and it's re-routed on "/" route
                     const fetchedData = await fetchNews("General", null);
-                    navigate("/Home");
+                    navigate("/");
                     setData(fetchedData);
                 } else {
                     const fetchedData = await fetchNews(categoryName, null);

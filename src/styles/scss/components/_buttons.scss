@@ -6,6 +6,10 @@ button {
     cursor: pointer;
 }
 
+.bookmark-button {
+    border: none;
+}
+
 .filter-button {
     width: 63px;
     height: 63px;
@@ -20,5 +24,5 @@ button {
 
 .filter-button:hover {
     background-color: var.$bg-color-card;
-    color: var.$color-text-red;
+    /*color: var.$color-text-red;*/
 }
