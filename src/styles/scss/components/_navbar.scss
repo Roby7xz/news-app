@@ -2,43 +2,46 @@
 @use "../utilities/mixins" as mixins;
 
 .navbar {
-    background-color: var.$bg-color-navbar;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  background-color: var.$bg-color-navbar;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .navbar-text {
-    margin-left: 170px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 46px;
+  margin-left: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
 
-    .span-first {
-        @include mixins.Typography($font-family: var.$font-InterV_Bold,
-            $color: var.$color-text-white,
-            $font-size: 16px,
-            $line-height: 21px,
-            $letter-spacing: -0.13px);
-    }
+  .p-first {
+    @include mixins.Typography(
+      $font-family: var.$font-InterV_Bold,
+      $color: var.$color-text-white,
+      $font-size: 16px,
+      $line-height: 21px,
+      $letter-spacing: -0.13px
+    );
+  }
 
-    .span-second {
-        @include mixins.Typography($font-family: var.$font-InterV,
-            $color: var.$color-text-white,
-            $font-size: 14px,
-            $line-height: 21px,
-            $letter-spacing: -0.12px);
-    }
-
+  .p-second {
+    @include mixins.Typography(
+      $font-family: var.$font-InterV,
+      $color: var.$color-text-white,
+      $font-size: 14px,
+      $line-height: 21px,
+      $letter-spacing: -0.12px
+    );
+  }
 }
 
 .navbar-buttons {
-    margin-right: 217px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+  margin-right: 217px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }

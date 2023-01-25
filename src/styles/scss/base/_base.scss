@@ -1,28 +1,38 @@
 @use "../utilities/variables" as var;
 
-
 :root {
-    font-family: var.$font-Inter, var.$font-sans-serif;
+  font-family: var.$font-Inter, var.$font-sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: var.$bg-color-body;
-    margin: 0px;
-    padding: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: var.$bg-color-body;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container {
-    margin-right: 171px;
-    margin-left: 175px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  margin-right: 170px;
+  margin-left: 175px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.filter-page-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  div {
+    flex-grow: 2;
+  }
+}
+
+.article-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-basis: auto;
+  padding-left: 25px;
+  padding-right: 20px;
 }

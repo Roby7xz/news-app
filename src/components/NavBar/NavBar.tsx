@@ -1,19 +1,25 @@
-import React from 'react';
-import Button from '../Button/Button';
+import React from "react";
+import Button from "../Button/Button";
 
 const NavBar = () => {
-    return (
-        <div className="navbar">
-            <div className="navbar-text">
-                <span className="span-first">Make MyNews your homepage</span>
-                <span className="span-second">Every day discover what's trending on the internet!</span>
-            </div>
-            <div className="navbar-buttons">
-                <Button type="button" route="/">GET</Button>
-                <Button type="button" route="/">No, thanks</Button>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="navbar">
+      <div className="navbar-text">
+        <p className="p-first">Make MyNews your homepage</p>
+        <p className="p-second">
+          Every day discover what's trending on the internet!
+        </p>
+      </div>
+      <div className="navbar-buttons">
+        <Button className="button-get" type="button" route="/">
+          GET
+        </Button>
+        <Button className="button-no-thanks" type="button" route="/">
+          No, thanks
+        </Button>
+      </div>
+    </div>
+  );
+};
 
-export default NavBar
+export default NavBar;

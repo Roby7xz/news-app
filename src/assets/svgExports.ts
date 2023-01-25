@@ -8,6 +8,7 @@ import Bookmarked from "./Bookmarked.svg";
 import unBookmarked from "./unBookmarked.svg";
 import Sports from "./Sports.svg";
 import Technology from "./Technology.svg";
+import RedDot from "./redDot.svg";
 
 
 
@@ -22,5 +23,6 @@ export {
     Bookmarked,
     unBookmarked,
     Sports,
-    Technology
+    Technology,
+    RedDot
 };

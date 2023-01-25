@@ -1,17 +1,61 @@
 @use "../utilities/variables" as var;
 @use "../utilities/mixins" as mixins;
 
-
 .article-list {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 33%;
-    gap: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 23px;
 }
 
-.card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 1px solid black;
+.article-card {
+  display: flex;
+  flex-direction: column;
+  height: 252px;
+  width: 321px;
+  border-radius: 8px;
+  background-color: var.$bg-color-card;
+
+  border: 1px solid black;
+
+  .article-img {
+    width: auto;
+    height: 140px;
+    border-radius: 8px 8px 0px 0px;
+  }
+}
+
+.article-body-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-bottom: 16px;
+  gap: 31px;
+}
+
+.article-card-body {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+
+  @include mixins.Typography(
+    $font-family: var.$font-InterV_Medium,
+    $font-size: 16px,
+    $line-height: 20px
+  );
+
+  a {
+    color: var.$color-text-black;
+    text-decoration: none;
+  }
+}
+
+.article-card-footer {
+  @include mixins.Typography(
+    $color: var.$color-line-gray,
+    $font-family: var.$font-InterV,
+    $font-size: 14px,
+    $line-height: 14px
+  );
 }

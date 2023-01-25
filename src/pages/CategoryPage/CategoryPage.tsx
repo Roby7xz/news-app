@@ -1,50 +1,52 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchNews } from "../../api/fetchNews";
 import ArticleList from "../../components/Articles/ArticleList";
 import { categories } from "../../utils/constants";
 import { Category, NewsResponse } from "../../utils/types";
-
+import { fetchNewsByCategory } from "../../api/fetchNews";
 
 type Params = {
-    categoryName: Category
-}
+  categoryName: Category;
+};
 
 type Props = {
-    searchData: NewsResponse | undefined
-}
+  searchData: NewsResponse | undefined;
+};
 
 const CategoryPage = ({ searchData }: Props) => {
-    const [data, setData] = useState<NewsResponse>();
-    const { categoryName } = useParams<Params>();
-    const navigate = useNavigate();
+  const [data, setData] = useState<NewsResponse>();
+  const { categoryName } = useParams<Params>();
+  const navigate = useNavigate();
 
-    const categoryExists = categories.find((category) => category === categoryName);
+  const categoryExists = categories.find(
+    (category) => category === categoryName
+  );
 
-    useEffect(() => {
-        if (categoryExists) {
-            const fetchData = async () => {
-                if (categoryName === "Home") { // On route /Home default category is General and it's re-routed on "/" route
-                    const fetchedData = await fetchNews("General", null);
-                    navigate("/");
-                    setData(fetchedData);
-                } else {
-                    const fetchedData = await fetchNews(categoryName, null);
-                    setData(fetchedData);
-                }
-            }
-
-            fetchData();
+  useEffect(() => {
+    if (categoryExists) {
+      const fetchData = async () => {
+        if (categoryName === "Home") {
+          // On route /Home default category is General and it's re-routed on "/" route
+          const fetchedData = await fetchNewsByCategory("General");
+          navigate("/");
+          setData(fetchedData);
+        } else {
+          const fetchedData = await fetchNewsByCategory(categoryName!);
+          navigate(`/${categoryName}`);
+          setData(fetchedData);
         }
-    }, [categoryName, categoryExists, navigate]);
+      };
 
-    return (
-        <div>
-            {categoryName}
-            <ArticleList categoriesData={data} searchData={searchData} />
-        </div>
-    )
+      fetchData();
+    }
+  }, [categoryName, categoryExists, navigate]);
 
-}
+  return (
+    <div className="article-list-wrapper">
+      {categoryName === "Home" ? "News" : categoryName}
+      <ArticleList categoriesData={data} searchData={searchData} />
+    </div>
+  );
+};
 
 export default CategoryPage;

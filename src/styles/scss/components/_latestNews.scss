@@ -1,0 +1,83 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
+
+.latest-news-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var.$bg-color-card;
+  height: 529px;
+  width: 321px;
+  border-radius: 8px;
+  margin-top: 35.2px;
+}
+
+.latest-news-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+  gap: 10px;
+
+  h4 {
+    @include mixins.Typography(
+      $color: var.$color-text-black,
+      $font-family: var.$font-InterV_Medium,
+      $font-size: 16px,
+      $line-height: 20px
+    );
+  }
+}
+
+.latest-news-articles {
+  display: flex;
+  flex-direction: column;
+  padding-top: 13px;
+  padding-left: 15px;
+  padding-right: 16px;
+  gap: 14px;
+  overflow-y: scroll;
+}
+
+.latest-news-articles::-webkit-scrollbar {
+  height: 68px;
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0000003d;
+  border-radius: 2px;
+}
+
+.latest-news-article {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-bottom: 1px solid var.$color-line-whitegray;
+  padding-bottom: 13px;
+
+  .publish-time {
+    @include mixins.Typography(
+      $color: var.$color-text-blue,
+      $font-family: var.$font-InterV_Bold,
+      $font-size: 15px,
+      $line-height: 16px
+    );
+  }
+
+  .title {
+    @include mixins.Typography(
+      $color: var.$color-text-black,
+      $font-family: var.$font-InterV_Medium,
+      $font-size: 16px,
+      $line-height: 20px
+    );
+  }
+}
+
+.latest-news-footer {
+  height: 51px;
+  width: 321px;
+}

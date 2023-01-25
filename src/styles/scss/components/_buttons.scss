@@ -1,28 +1,70 @@
 @use "../utilities/variables" as var;
 @use "../utilities/mixins" as mixins;
 
-
 button {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.button-get {
+  height: 40px;
+  width: 69px;
+  border-radius: 8px;
+  border: none;
+
+  @include mixins.Typography(
+    $color: var.$color-text-gray,
+    $font-family: var.$font-InterV_Bold,
+    $font-size: 14px,
+    $line-height: 20px
+  );
+}
+
+.button-no-thanks {
+  border: none;
+  background: none;
+  @include mixins.Typography(
+    $color: var.$color-text-white,
+    $font-family: var.$font-InterV_Bold,
+    $font-size: 14px,
+    $line-height: 20px
+  );
 }
 
 .bookmark-button {
-    border: none;
+  border: none;
+  background-color: var.$bg-color-card;
 }
 
 .filter-button {
-    width: 63px;
-    height: 63px;
-    border-radius: var.$border-radius-5px;
-    border: none;
+  width: 63px;
+  height: 63px;
+  border-radius: var.$border-radius-5px;
+  border: none;
 
-    @include mixins.Typography($color: var.$color-text-gray,
-        $font-family: var.$font-InterV_Semi,
-        $line-height: 14px,
-        $letter-spacing: 0.1px);
+  @include mixins.Typography(
+    $color: var.$color-text-gray,
+    $font-family: var.$font-InterV_Semi,
+    $line-height: 14px,
+    $letter-spacing: 0.1px
+  );
 }
 
 .filter-button:hover {
-    background-color: var.$bg-color-card;
-    /*color: var.$color-text-red;*/
+  background-color: var.$bg-color-card;
+  /*color: var.$color-text-red;*/
+}
+
+.button-search {
+  height: 40px;
+  width: 95px;
+  background-color: var.$bg-color-navbar;
+  border: none;
+  border-radius: 6px;
+  margin: 5px;
+  @include mixins.Typography(
+    $color: var.$color-text-white,
+    $font-family: var.$font-InterV_Bold,
+    $font-size: 15px,
+    $line-height: 20px
+  );
 }
