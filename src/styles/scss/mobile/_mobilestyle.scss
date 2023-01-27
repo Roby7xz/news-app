@@ -1,38 +1,150 @@
 @use "../utilities/variables" as var;
 @use "../utilities/mixins" as mixins;
+@use "../utilities/breakpoints" as breakpoint;
 
-//950px stane resize za margine
-
-@media screen and (max-width: 1110px) {
+@include mixins.lg {
   .container {
-    background-color: aqua;
     margin-left: 100px;
     margin-right: 100px;
   }
 }
 
-@media screen and (max-width: 950px) {
+@include mixins.md {
+  .navbar {
+    @include mixins.flex-row();
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    .navbar-text {
+      margin-left: 25px;
+      gap: 10px;
+    }
+
+    .navbar-buttons {
+      margin-right: 100px;
+    }
+  }
+
+  .container {
+    margin: 0;
+  }
+}
+
+@include mixins.sm {
   body {
-    display: flex;
+    margin: 24px 16px 28px;
   }
 
   .navbar {
-    width: 200px;
+    @include mixins.flex-row();
     background-color: inherit;
+    justify-content: space-between;
+    gap: 213px;
+
+    .navbar-text {
+      margin-left: 0;
+    }
+
+    .navbar-buttons {
+      margin: 0;
+    }
+
+    span {
+      @include mixins.Typography(
+        $font-family: var.$font-InterV,
+        $font-size: 32px,
+        $font-weight: 900,
+        $line-height: 39px
+      );
+    }
+
+    .title-first-span {
+      color: var.$color-text-red;
+    }
+
+    .title-second-span {
+      color: var.$color-text-gray;
+    }
+  }
+
+  .article-list-wrapper {
+    padding: 0;
+  }
+
+  .wrapper {
+    padding-top: 20px;
+    padding-bottom: 32px;
+    border: none;
+  }
+
+  .mobile-buttons {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    gap: 33px;
+
+    .button-mobile {
+      background-color: inherit;
+      height: 40px;
+      width: 102px;
+      border-radius: 20px;
+      border: none;
+      font-style: italic;
+
+      @include mixins.Typography(
+        $color: var.$color-text-gray,
+        $font-family: var.$font-InterV,
+        $font-size: 16px,
+        $line-height: 20px,
+        $font-weight: 600
+      );
+
+      &-active {
+        @extend .button-mobile;
+        color: var.$color-text-red;
+        background-color: rgba(187, 30, 30, 0.1);
+      }
+    }
+  }
+
+  .inner-container {
+    justify-content: center;
+  }
+
+  .filter-list {
+    @include mixins.flex-row();
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: auto;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .filter-button {
+    @include mixins.flex-column();
     justify-content: center;
     align-items: center;
-    gap: 213px;
-  }
-
-  .navbar-title {
-    align-self: center;
-  }
-
-  .navbar-buttons {
-    align-self: center;
-    height: 24px;
-    width: 20px;
+    gap: 7px;
+    height: 95px;
+    width: 95px;
+    border-radius: 5px;
   }
 }
+
+/*
+@media (max-width: 1110px) {
+  
+}
+
+@media (max-width: 950px) {
+ 
+}
+
+@media (max-width: 751px) {
+  
+}
+*/

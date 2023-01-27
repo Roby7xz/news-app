@@ -1,36 +1,31 @@
 @use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
 
 :root {
   font-family: var.$font-Inter, var.$font-sans-serif;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
   background-color: var.$bg-color-body;
   margin: 0px;
   padding: 0px;
 }
 
 .container {
+  @include mixins.flex-column();
   margin-right: 170px;
   margin-left: 175px;
-  display: flex;
-  flex-direction: column;
   gap: 24px;
 }
 
 .inner-container {
-  display: flex;
-  flex-direction: row;
-  flex: 0 0 33.333%;
+  @include mixins.flex-row();
 }
 
 .article-list-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
   gap: 16px;
-  flex-basis: auto;
   padding-left: 25px;
   padding-right: 20px;
 

@@ -36,22 +36,18 @@ button {
 }
 
 .filter-button {
+  background-color: inherit;
   width: 63px;
   height: 63px;
   border-radius: var.$border-radius-5px;
   border: none;
 
   @include mixins.Typography(
-    $color: var.$color-text-gray,
+    $color: rgba(var.$color-text-gray, 0.5),
     $font-family: var.$font-InterV_Semi,
     $line-height: 14px,
     $letter-spacing: 0.1px
   );
-}
-
-.filter-button:hover {
-  background-color: var.$bg-color-card;
-  /*color: var.$color-text-red;*/
 }
 
 .button-search {

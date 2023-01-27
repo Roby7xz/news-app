@@ -2,15 +2,13 @@
 @use "../utilities/mixins" as mixins;
 
 .article-list {
-  display: flex;
-  flex-direction: row;
+  @include mixins.flex-row();
   flex-wrap: wrap;
   gap: 23px;
 }
 
 .article-card {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
   height: 252px;
   width: 321px;
   border-radius: 8px;
@@ -24,8 +22,7 @@
 }
 
 .article-body-footer-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
   margin-top: 12px;
   margin-left: 12px;
   margin-bottom: 16px;
@@ -33,8 +30,7 @@
 }
 
 .article-card-body {
-  display: flex;
-  flex-direction: row;
+  @include mixins.flex-row();
   gap: 25px;
 
   @include mixins.Typography(

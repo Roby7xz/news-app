@@ -1,31 +1,40 @@
-import React from "react";
 import Button from "../Button/Button";
-import { MenuIcon } from "../../assets/svgExports";
+import { MenuIcon, ExitMenuIcon } from "../../assets/svgExports";
+import { useState } from "react";
 
 type Props = {
   isMobileScreen: boolean;
+  showMenu: boolean;
+  handleShowMenu: () => void;
 };
 
-const NavBar = ({ isMobileScreen }: Props) => {
-  const handleShowMenu = () => {
-    console.log("MOlim");
-  };
-
+const NavBar = ({ isMobileScreen, showMenu, handleShowMenu }: Props) => {
   return (
     <>
       {isMobileScreen ? (
         <div className="navbar">
-          <div className="navbar-title">
-            <span className="title-first-span">My</span>
-            <span className="title-second-span">News</span>
-          </div>
+          {showMenu ? (
+            <div className="navbar-title-center">
+              <span className="title-first-span">My</span>
+              <span className="title-second-span">News</span>
+            </div>
+          ) : (
+            <div className="navbar-title">
+              <span className="title-first-span">My</span>
+              <span className="title-second-span">News</span>
+            </div>
+          )}
           <div className="navbar-buttons">
             <Button
               className="button-get"
               type="button"
               onClick={handleShowMenu}
             >
-              <img src={MenuIcon} alt="Menu.svg" />
+              {showMenu ? (
+                <img src={ExitMenuIcon} alt="ExitMenu.svg" />
+              ) : (
+                <img src={MenuIcon} alt="Menu.svg" />
+              )}
             </Button>
           </div>
         </div>

@@ -2,8 +2,7 @@
 @use "../utilities/mixins" as mixins;
 
 .latest-news-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
   background-color: var.$bg-color-card;
   height: 529px;
   width: 321px;
@@ -12,8 +11,7 @@
 }
 
 .latest-news-header {
-  display: flex;
-  flex-direction: row;
+  @include mixins.flex-row();
   justify-content: flex-start;
   align-items: center;
   padding-left: 15px;
@@ -30,8 +28,7 @@
 }
 
 .latest-news-articles {
-  display: flex;
-  flex-direction: column;
+ @include mixins.flex-column();
   padding-top: 13px;
   padding-left: 15px;
   padding-right: 16px;
@@ -52,8 +49,7 @@
 }
 
 .latest-news-article {
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-column();
   gap: 3px;
   border-bottom: 1px solid var.$color-line-whitegray;
   padding-bottom: 13px;
@@ -78,6 +74,18 @@
 }
 
 .latest-news-footer {
+  @include mixins.flex-row();
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  padding-left: 14px;
   height: 51px;
   width: 321px;
+
+  @include mixins.Typography(
+    $color: var.$color-text-blue,
+    $font-family: var.$font-InterV_Medium,
+    $font-size: 18px,
+    $line-height: 20px
+  );
 }

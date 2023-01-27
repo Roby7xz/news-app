@@ -4,7 +4,6 @@ import { ButtonType } from "../../utils/types";
 
 type ButtonProps = {
   className?: string;
-  disabled?: boolean;
   type: ButtonType;
   children: React.ReactNode;
   route?: string;
@@ -16,7 +15,6 @@ const Button = (props: ButtonProps) => {
     <Link to={props.route!}>
       <button
         className={props.className}
-        disabled={props.disabled}
         type={props.type}
         onClick={props.onClick}
       >

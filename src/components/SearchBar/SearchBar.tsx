@@ -5,10 +5,11 @@ import { NewsResponse } from "../../utils/types";
 import { Search } from "../../assets/svgExports";
 
 type Props = {
+  isMobileScreen: boolean;
   appCallback: (queryData: NewsResponse | undefined) => void;
 };
 
-const SearchBar = ({ appCallback }: Props) => {
+const SearchBar = ({ isMobileScreen, appCallback }: Props) => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
@@ -20,18 +21,21 @@ const SearchBar = ({ appCallback }: Props) => {
     const fetchQueryData = async () => {
       const fetchedData = await fetchNewsByQuery(query);
       appCallback(fetchedData);
+      setQuery("");
     };
 
     fetchQueryData();
   };
 
   return (
-    <div>
+    <>
       <div className="wrapper">
-        <div>
-          <span className="title-first-span">My</span>
-          <span className="title-second-span">News</span>
-        </div>
+        {isMobileScreen ? null : (
+          <div>
+            <span className="title-first-span">My</span>
+            <span className="title-second-span">News</span>
+          </div>
+        )}
         <form className="search-bar-form-wrapper" onSubmit={handleSubmit}>
           <img src={Search} alt="Search.svg" />
           <input
@@ -41,13 +45,14 @@ const SearchBar = ({ appCallback }: Props) => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button className="button-search" type="submit">
-            SEARCH
-          </button>
+          {isMobileScreen ? null : (
+            <button className="button-search" type="submit">
+              SEARCH
+            </button>
+          )}
         </form>
       </div>
-      <hr className="search-bar-hr" />
-    </div>
+    </>
   );
 };
 

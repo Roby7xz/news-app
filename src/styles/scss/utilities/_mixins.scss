@@ -1,15 +1,37 @@
-@mixin flex(
-  $flex-direction: null,
-  $justify-content: null,
-  $align-items: null,
-  $gap: null
-) {
-  display: flex;
-  flex-direction: $flex-direction;
-  justify-content: $justify-content;
-  align-items: $align-items;
-  gap: $gap;
+@use "_breakpoints" as breakpoint;
+
+/*** Media mixin ***/
+@mixin lg {
+  @media (max-width: breakpoint.$screen-lg-max) {
+    @content;
+  }
 }
+
+@mixin md {
+  @media (max-width: breakpoint.$screen-md-max) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: breakpoint.$screen-sm-max) {
+    @content;
+  }
+}
+
+/*** Flex direction mixins ***/
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+/*** Typography mixin ***/
 
 @mixin Typography(
   $color: null,

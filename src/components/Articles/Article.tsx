@@ -51,7 +51,7 @@ const Article = ({ article, keyId }: Props) => {
   };
 
   return (
-    <div className={`article-card`}>
+    <div className="article-card">
       <img className="article-img" src={urlToImage!} alt="ArticleImage.jpg" />
       <div className="article-body-footer-wrapper">
         <div className="article-card-body">

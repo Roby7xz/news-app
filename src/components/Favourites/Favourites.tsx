@@ -21,12 +21,8 @@ const Favourites = () => {
 
     window.addEventListener("storage", getData);
 
-    return () => window.removeEventListener("storage", getData);
+    return () =>  window.removeEventListener("storage", getData);
   }, []);
-
-  
-
-
 
   return (
     <div className="favourites">

@@ -2,16 +2,14 @@
 @use "../utilities/mixins" as mixins;
 
 .favourites {
+  @include mixins.flex-column();
   border-top: 1px solid var.$color-line-gray;
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   margin-top: 10px;
 }
 
 .favourites-list {
-  display: flex;
-  flex-direction: wrap;
+  @include mixins.flex-row();
   flex-wrap: wrap;
   gap: 22px;
 }

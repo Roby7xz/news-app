@@ -11,15 +11,16 @@ import { useEffect, useState } from "react";
 function App() {
   const [searchData, setSearchData] = useState<NewsResponse>();
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
-    window.innerWidth < 950
+    window.innerWidth <= 750
   );
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const handleCallback = (queryData: NewsResponse | undefined) => {
     setSearchData(queryData);
   };
 
   const updateScreenSize = () => {
-    setIsMobileScreen(window.innerWidth < 950);
+    setIsMobileScreen(window.innerWidth <= 750);
   };
 
   useEffect(() => {
@@ -27,22 +28,48 @@ function App() {
     return () => window.removeEventListener("resize", updateScreenSize);
   });
 
+  const handleShowMenu = () => {
+    if (isMobileScreen) {
+      setShowMenu((prevState) => !prevState);
+    }
+
+    if (window.innerWidth > 751) {
+      setShowMenu(false);
+    }
+  };
+
   return (
     <>
-      <NavBar isMobileScreen={isMobileScreen} />
+      <NavBar
+        isMobileScreen={isMobileScreen}
+        showMenu={showMenu}
+        handleShowMenu={handleShowMenu}
+      />
       <div className="container">
-        <SearchBar appCallback={handleCallback} />
-        <div className="inner-container">
-          <FilterList />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route
-              path="/:categoryName"
-              element={<CategoryPage searchData={searchData} />}
-            />
-          </Routes>
-          <LatestNews />
-        </div>
+        <SearchBar
+          isMobileScreen={isMobileScreen}
+          appCallback={handleCallback}
+        />
+        <>
+          {isMobileScreen && showMenu ? (
+            <FilterList />
+          ) : (
+            <div className="inner-container">
+              <FilterList isMobileScreen={isMobileScreen} />
+              <Routes>
+                <Route
+                  path="/"
+                  element={<HomePage isMobileScreen={isMobileScreen} />}
+                />
+                <Route
+                  path="/:categoryName"
+                  element={<CategoryPage searchData={searchData} />}
+                />
+              </Routes>
+              <LatestNews isMobileScreen={isMobileScreen} />
+            </div>
+          )}
+        </>
       </div>
     </>
   );

@@ -2,8 +2,8 @@
 @use "../utilities/mixins" as mixins;
 
 .filter-list {
+  @include mixins.flex-column();
   width: 63px;
   height: 415px;
-  display: flex;
-  flex-direction: column;
+  gap: 10px;
 }

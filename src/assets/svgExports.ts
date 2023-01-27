@@ -10,6 +10,8 @@ import Sports from "./Sports.svg";
 import Technology from "./Technology.svg";
 import RedDot from "./redDot.svg";
 import MenuIcon from "./navIcon.svg";
+import ExitMenuIcon from "./exitMenu.svg";
+import LatestArrow from "./latestArrow.svg";
 
 export {
   Home,
@@ -24,4 +26,6 @@ export {
   Technology,
   RedDot,
   MenuIcon,
+  ExitMenuIcon,
+  LatestArrow,
 };
