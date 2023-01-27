@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("resize", updateScreenSize);
-    return () => window.removeEventListener("resize", updateScreenSize);
+    //return () => window.removeEventListener("resize", updateScreenSize);
   });
 
   const handleShowMenu = () => {

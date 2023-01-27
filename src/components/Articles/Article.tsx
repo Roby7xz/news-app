@@ -7,10 +7,9 @@ import { Bookmarked, unBookmarked } from "../../assets/svgExports";
 
 type Props = {
   article: ArticleData;
-  keyId?: number;
 };
 
-const Article = ({ article, keyId }: Props) => {
+const Article = ({ article }: Props) => {
   const [isBookmarked, setIsBookmarked] = useState<isBookmarked>(
     article.bookmarked
   );
@@ -34,7 +33,11 @@ const Article = ({ article, keyId }: Props) => {
     if (oldData !== null) {
       let parsedData = JSON.parse(oldData);
 
-      setBookmarks([...parsedData, { ...article, bookmarked: true }]);
+      let filteredData = parsedData.filter(
+        (article: ArticleData) => article.title !== title
+      );
+
+      setBookmarks([...filteredData, { ...article, bookmarked: true }]);
     }
   };
 

@@ -11,23 +11,7 @@
   border-bottom: 1px solid rgba(var.$color-line-gray, 0.1);
 
   div {
-    .title-first-span,
-    .title-second-span {
-      @include mixins.Typography(
-        $font-family: var.$font-InterV,
-        $font-size: 32px,
-        $font-weight: 900,
-        $line-height: 39px
-      );
-    }
-
-    .title-first-span {
-      color: var.$color-text-red;
-    }
-
-    .title-second-span {
-      color: var.$color-text-gray;
-    }
+    @include mixins.title-span();
   }
 }
 

@@ -1,6 +1,5 @@
 import { categories } from "../../utils/constants";
 import Button from "../Button/Button";
-import SVGLoader from "../SVGLoader/SVGLoader";
 
 type Props = {
   isMobileScreen?: boolean;
@@ -19,11 +18,14 @@ const FilterList = ({ isMobileScreen }: Props) => {
             return (
               <Button
                 key={category}
-                className="filter-button"
+                className={`filter-button filter-button-${category}`}
                 type="button"
                 route={`/${category}`}
               >
-                <SVGLoader category={category} />
+                <img
+                  src={require(`../../assets/${category}.svg`)}
+                  alt={`${category}.svg`}
+                />
                 {category}
               </Button>
             );

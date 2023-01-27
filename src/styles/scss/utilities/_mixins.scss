@@ -1,4 +1,5 @@
 @use "_breakpoints" as breakpoint;
+@use "variables" as var;
 
 /*** Media mixin ***/
 @mixin lg {
@@ -47,4 +48,25 @@
   font-size: $font-size;
   line-height: $line-height;
   letter-spacing: $letter-spacing;
+}
+
+/*** Title styling mixin ***/
+
+@mixin title-span() {
+  span {
+    @include Typography(
+      $font-family: var.$font-InterV,
+      $font-size: 32px,
+      $font-weight: 900,
+      $line-height: 39px
+    );
+  }
+
+  .title-first-span {
+    color: var.$color-text-red;
+  }
+
+  .title-second-span {
+    color: var.$color-text-gray;
+  }
 }

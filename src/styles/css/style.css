@@ -5,6 +5,7 @@
 /*** Media mixin ***/
 /*** Flex direction mixins ***/
 /*** Typography mixin ***/
+/*** Title styling mixin ***/
 :root {
   font-family: "Inter", "sans serif";
 }
@@ -15,6 +16,18 @@ body {
   background-color: #f2f2f2;
   margin: 0px;
   padding: 0px;
+  overflow-y: scroll;
+  height: auto;
+}
+body::-webkit-scrollbar {
+  height: 68px;
+  width: 15px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2392156863);
+  border-radius: 10px;
+  height: 68px;
+  width: 15px;
 }
 
 .container {
@@ -90,8 +103,7 @@ body {
   padding-bottom: 28px;
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
 }
-.wrapper div .title-first-span,
-.wrapper div .title-second-span {
+.wrapper div span {
   font-family: "InterV";
   font-weight: 900;
   font-size: 32px;
@@ -181,6 +193,12 @@ button {
   font-family: "InterV_Semi";
   line-height: 14px;
   letter-spacing: 0.1px;
+}
+
+.filter-button-Home {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 2px -1px #c8cad1;
+  color: #bb1e1e;
 }
 
 .button-search {
@@ -288,17 +306,14 @@ button {
   gap: 14px;
   overflow-y: scroll;
 }
-
 .latest-news-articles::-webkit-scrollbar {
   height: 68px;
   width: 4px;
 }
-
-::-webkit-scrollbar-track {
+.latest-news-articles::-webkit-scrollbar-track {
   background: white;
 }
-
-::-webkit-scrollbar-thumb {
+.latest-news-articles::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2392156863);
   border-radius: 2px;
 }
@@ -407,6 +422,29 @@ button {
   .navbar .title-second-span {
     color: #1d1d1b;
   }
+  .navbar-center {
+    display: flex;
+    flex-flow: column-reverse wrap;
+  }
+  .navbar-center span {
+    font-family: "InterV";
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 39px;
+  }
+  .navbar-center .title-first-span {
+    color: #bb1e1e;
+  }
+  .navbar-center .title-second-span {
+    color: #1d1d1b;
+  }
+  .navbar-center .navbar-buttons {
+    margin: 0;
+    align-self: flex-end;
+  }
+  .navbar-center .navbar-title {
+    align-self: center;
+  }
   .article-list-wrapper {
     padding: 0;
   }
@@ -462,20 +500,12 @@ button {
     width: 95px;
     border-radius: 5px;
   }
+  .filter-button-Home {
+    background-color: #ffffff;
+    box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.16);
+    color: #bb1e1e;
+  }
 }
-/*
-@media (max-width: 1110px) {
-
-}
-
-@media (max-width: 950px) {
-
-}
-
-@media (max-width: 751px) {
-
-}
-*/
 /*** Forwards ***/
 
 /*# sourceMappingURL=style.css.map */

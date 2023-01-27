@@ -50,6 +50,13 @@ button {
   );
 }
 
+.filter-button-Home {
+  $color: var.$color-text-red;
+  background-color: var.$bg-color-card;
+  box-shadow: 0px 1px 2px -1px #c8cad1;
+  @include mixins.Typography($color: var.$color-text-red);
+}
+
 .button-search {
   height: 40px;
   width: 95px;

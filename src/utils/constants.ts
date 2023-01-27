@@ -1,7 +1,7 @@
 import { AxiosConfig, BookmarksKey, Category } from "./types";
 
 /*** Const ***/
-const API_KEY = "1edf9d42b6bf4535ac6ddd75e17e2138";
+const API_KEY = "7473cb85aa6a4d9b90f8a0296997cfa0";
 const baseURL = "https://newsapi.org/v2";
 
 /*** Exported Consts***/

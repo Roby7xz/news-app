@@ -28,24 +28,24 @@
 }
 
 .latest-news-articles {
- @include mixins.flex-column();
+  @include mixins.flex-column();
   padding-top: 13px;
   padding-left: 15px;
   padding-right: 16px;
   gap: 14px;
   overflow-y: scroll;
-}
 
-.latest-news-articles::-webkit-scrollbar {
-  height: 68px;
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: white;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #0000003d;
-  border-radius: 2px;
+  &::-webkit-scrollbar {
+    height: 68px;
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #0000003d;
+    border-radius: 2px;
+  }
 }
 
 .latest-news-article {

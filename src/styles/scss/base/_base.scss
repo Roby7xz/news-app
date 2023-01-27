@@ -10,6 +10,20 @@ body {
   background-color: var.$bg-color-body;
   margin: 0px;
   padding: 0px;
+  overflow-y: scroll;
+  height: auto;
+
+  &::-webkit-scrollbar {
+    height: 68px;
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #0000003d;
+    border-radius: 10px;
+    height: 68px;
+    width: 15px;
+  }
 }
 
 .container {
