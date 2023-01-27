@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import { ArticleData, isBookmarked } from "../../utils/types";
 import { LOCAL_STORAGE_KEY } from "../../utils/constants";
@@ -58,7 +57,7 @@ const Article = ({ article }: Props) => {
       <img className="article-img" src={urlToImage!} alt="ArticleImage.jpg" />
       <div className="article-body-footer-wrapper">
         <div className="article-card-body">
-          <Link to={`${url}`}>{`${title.slice(0, 25)}...`}</Link>
+          {`${title.slice(0, 25)}...`}
           <Button
             className="bookmark-button"
             type="button"
