@@ -41,6 +41,7 @@ export type Category =
   | "Health"
   | "Science"
   | "Sports"
-  | "Technology";
+  | "Technology"
+  | "News by search";
 
 export type ButtonType = "submit" | "reset" | "button";

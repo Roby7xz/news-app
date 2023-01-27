@@ -1,0 +1,17 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
+
+.favourites {
+  border-top: 1px solid var.$color-line-gray;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.favourites-list {
+  display: flex;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+  gap: 22px;
+}

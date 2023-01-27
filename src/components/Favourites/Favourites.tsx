@@ -10,20 +10,32 @@ const Favourites = () => {
   });
 
   useEffect(() => {
-    let data = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (data === null) {
-      setBookmarks([]);
-    } else {
-      setBookmarks(JSON.parse(data));
-    }
+    const getData = () => {
+      let data = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (data === null) {
+        setBookmarks([]);
+      } else {
+        setBookmarks(JSON.parse(data));
+      }
+    };
+
+    window.addEventListener("storage", getData);
+
+    return () => window.removeEventListener("storage", getData);
   }, []);
 
+  
+
+
+
   return (
-    <div>
-      Favourites
-      {bookmarks?.map((article: ArticleData, index: number) => {
-        return <Article key={article.title + index} article={article} />;
-      })}
+    <div className="favourites">
+      <h5>Favourites</h5>
+      <div className="favourites-list">
+        {bookmarks?.map((article: ArticleData, index: number) => {
+          return <Article key={article.title + index} article={article} />;
+        })}
+      </div>
     </div>
   );
 };

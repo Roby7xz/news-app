@@ -6,18 +6,30 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import FilterList from "./components/Filters/FilterList";
 import LatestNews from "./components/LatestNews/LatestNews";
 import { NewsResponse } from "./utils/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [searchData, setSearchData] = useState<NewsResponse>();
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
+    window.innerWidth < 950
+  );
 
   const handleCallback = (queryData: NewsResponse | undefined) => {
     setSearchData(queryData);
   };
 
+  const updateScreenSize = () => {
+    setIsMobileScreen(window.innerWidth < 950);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateScreenSize);
+    return () => window.removeEventListener("resize", updateScreenSize);
+  });
+
   return (
     <>
-      <NavBar />
+      <NavBar isMobileScreen={isMobileScreen} />
       <div className="container">
         <SearchBar appCallback={handleCallback} />
         <div className="inner-container">
@@ -28,9 +40,6 @@ function App() {
               path="/:categoryName"
               element={<CategoryPage searchData={searchData} />}
             />
-            {
-              //<Route path="*" element={<Navigate to="/" />} />
-            }
           </Routes>
           <LatestNews />
         </div>

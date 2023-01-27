@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import {  fetchNewsByQuery } from "../../api/fetchNews";
+import { fetchNewsByQuery } from "../../api/fetchNews";
 import { NewsResponse } from "../../utils/types";
 import { Search } from "../../assets/svgExports";
 
@@ -20,7 +20,6 @@ const SearchBar = ({ appCallback }: Props) => {
     const fetchQueryData = async () => {
       const fetchedData = await fetchNewsByQuery(query);
       appCallback(fetchedData);
-      setQuery("");
     };
 
     fetchQueryData();

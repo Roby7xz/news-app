@@ -17,9 +17,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="article-list-wrapper">
-      News
-      <ArticleList defaultData={data} />
+    <div className="homepage">
+      <div className="article-list-wrapper">
+        News
+        <ArticleList defaultData={data} />
+      </div>
       <Favourites />
     </div>
   );

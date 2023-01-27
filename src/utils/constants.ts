@@ -1,7 +1,7 @@
 import { AxiosConfig, BookmarksKey, Category } from "./types";
 
 /*** Const ***/
-const API_KEY = "1edf9d42b6bf4535ac6ddd75e17e2138";
+const API_KEY = "7cca09a4e5d34f31a99f97b67ae7423f";
 const baseURL = "https://newsapi.org/v2";
 
 /*** Exported Consts***/
@@ -13,6 +13,7 @@ export const categories: Category[] = [
   "Science",
   "Sports",
   "Technology",
+  "News by search",
 ];
 
 export const defaultAxiosConfig: AxiosConfig = {

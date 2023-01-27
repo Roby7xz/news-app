@@ -23,9 +23,7 @@ body {
 .inner-container {
   display: flex;
   flex-direction: row;
-  div {
-    flex-grow: 2;
-  }
+  flex: 0 0 33.333%;
 }
 
 .article-list-wrapper {
@@ -35,4 +33,8 @@ body {
   flex-basis: auto;
   padding-left: 25px;
   padding-right: 20px;
+
+  div {
+    flex-grow: 2;
+  }
 }

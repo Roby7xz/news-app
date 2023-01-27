@@ -30,6 +30,8 @@ const CategoryPage = ({ searchData }: Props) => {
           const fetchedData = await fetchNewsByCategory("General");
           navigate("/");
           setData(fetchedData);
+        } else if (categoryName === "News by search") {
+          setData(searchData);
         } else {
           const fetchedData = await fetchNewsByCategory(categoryName!);
           navigate(`/${categoryName}`);
@@ -39,7 +41,7 @@ const CategoryPage = ({ searchData }: Props) => {
 
       fetchData();
     }
-  }, [categoryName, categoryExists, navigate]);
+  }, [categoryName, categoryExists, searchData, navigate]);
 
   return (
     <div className="article-list-wrapper">

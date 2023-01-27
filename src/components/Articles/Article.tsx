@@ -24,6 +24,7 @@ const Article = ({ article, keyId }: Props) => {
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(bookmarks));
+    window.dispatchEvent(new Event("storage"));
   }, [bookmarks]);
 
   const handleBookmark = (article: ArticleData) => {

@@ -1,0 +1,38 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mixins;
+
+//950px stane resize za margine
+
+@media screen and (max-width: 1110px) {
+  .container {
+    background-color: aqua;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  body {
+    display: flex;
+  }
+
+  .navbar {
+    width: 200px;
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 213px;
+  }
+
+  .navbar-title {
+    align-self: center;
+  }
+
+  .navbar-buttons {
+    align-self: center;
+    height: 24px;
+    width: 20px;
+  }
+}

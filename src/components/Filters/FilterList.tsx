@@ -6,6 +6,10 @@ const FilterList = () => {
   return (
     <nav className="filter-list">
       {categories?.map((category) => {
+        if (category === "News by search") {
+          return null;
+        }
+
         return (
           <Button
             key={category}
